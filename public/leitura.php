@@ -60,7 +60,7 @@
                 echo '<tr>';
 
                 echo '<td>' . $registro[$id_leitura] . '</td>' .
-                    '<td>' . $registro[$id_leitor] . '</td>';
+                    '<td>' . $registro[$id_leitor] . '</td>'.
                     '<td>' . $registro[$titulo] . '</td>';
                 echo '</tr>';
             }

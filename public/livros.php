@@ -67,8 +67,8 @@
                 echo '<td>' . $registro[$titulo] . '</td>' .
                     '<td>' . $registro[$autor] . '</td>' .
                     /* TODO-4: Adicione a tabela os novos registros. */
-                    '<td>' . $registro[$classificacao] . '</td>';
-                    '<td>' . $registro[$paginas] . '</td>';
+                    '<td>' . $registro[$classificacao] . '</td>'.
+                    '<td>' . $registro[$paginas] . '</td>'.
                     '<td>' . $registro[$edicao] . '</td>';
                 echo '</tr>';
             }
