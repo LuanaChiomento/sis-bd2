@@ -13,30 +13,28 @@
 
 <body>
     <div class="content">
-        <h1>Bibliófilo's</h1>
+        <h1>Leitores</h1>
 
-        <h2>Livros</h2>
+        <h2>leitor</h2>
         <?php
         require 'mysql_server.php';
 
         $conexao = RetornaConexao();
 
-        $titulo = 'titulo';
-        $autor = 'autor';
-        $classificacao = 'classificacao';
-        $paginas = 'paginas';
-        $edicao = 'edicao';
+        $nome_leitor = 'Nome_leitor';
+        $id_leitor = 'id_leitor';
+        $cidade = 'Cidade';
+        $numero = 'Numero';
         /*TODO-1: Adicione uma variavel para cada coluna */
 
 
         $sql =
-            'SELECT ' . $titulo .
-            '     , ' . $autor .
-            '     , ' . $classificacao .
-            '     , ' . $paginas .
-            '     , ' . $edicao .
+            'SELECT ' . $nome_leitor .
+            '     , ' . $id_leitor .
+            '     , ' . $cidade .
+            '     , ' . $numero .
             /*TODO-2: Adicione cada variavel a consulta abaixo */
-            '  FROM livros';
+            '  FROM leitor';
 
 
         $resultado = mysqli_query($conexao, $sql);
@@ -49,12 +47,11 @@
         $cabecalho =
             '<table>' .
             '    <tr>' .
-            '        <th>' . $titulo . '</th>' .
-            '        <th>' . $autor . '</th>' .
+            '        <th>' . $nome_leitor . '</th>' .
+            '        <th>' . $id_leitor . '</th>' .
+            '        <th>' . $cidade . '</th>' .
             /* TODO-3: Adicione as variaveis ao cabeçalho da tabela */
-            '        <th>' . $classificacao . '</th>' .
-            '        <th>' . $paginas . '</th>' .
-            '        <th>' . $edicao . '</th>' .
+            '        <th>' . $numero . '</th>' .
             '    </tr>';
 
         echo $cabecalho;
@@ -64,12 +61,11 @@
             while ($registro = mysqli_fetch_assoc($resultado)) {
                 echo '<tr>';
 
-                echo '<td>' . $registro[$titulo] . '</td>' .
-                    '<td>' . $registro[$autor] . '</td>' .
+                echo '<td>' . $registro[$nome_leitor] . '</td>' .
+                    '<td>' . $registro[$id_leitor] . '</td>' .
+                    '<td>' . $registro[$cidade] . '</td>' .
                     /* TODO-4: Adicione a tabela os novos registros. */
-                    '<td>' . $registro[$classificacao] . '</td>';
-                    '<td>' . $registro[$paginas] . '</td>';
-                    '<td>' . $registro[$edicao] . '</td>';
+                    '<td>' . $registro[$numero] . '</td>';
                 echo '</tr>';
             }
             echo '</table>';

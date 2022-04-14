@@ -13,30 +13,25 @@
 
 <body>
     <div class="content">
-        <h1>Bibliófilo's</h1>
+        <h1>Amizade</h1>
 
-        <h2>Livros</h2>
+        <h2>amizade</h2>
         <?php
         require 'mysql_server.php';
 
         $conexao = RetornaConexao();
 
-        $titulo = 'titulo';
-        $autor = 'autor';
-        $classificacao = 'classificacao';
-        $paginas = 'paginas';
-        $edicao = 'edicao';
+        $id_leitor1 = 'id_leitor1';
+        $id_leitor2 = 'id_leitor2';
+
         /*TODO-1: Adicione uma variavel para cada coluna */
 
 
         $sql =
-            'SELECT ' . $titulo .
-            '     , ' . $autor .
-            '     , ' . $classificacao .
-            '     , ' . $paginas .
-            '     , ' . $edicao .
+            'SELECT ' . $id_leitor1 .
+            '     , ' . $id_leitor2 .
             /*TODO-2: Adicione cada variavel a consulta abaixo */
-            '  FROM livros';
+            '  FROM amizade';
 
 
         $resultado = mysqli_query($conexao, $sql);
@@ -49,12 +44,9 @@
         $cabecalho =
             '<table>' .
             '    <tr>' .
-            '        <th>' . $titulo . '</th>' .
-            '        <th>' . $autor . '</th>' .
+            '        <th>' . $id_leitor1 . '</th>' .
+            '        <th>' . $id_leitor2 . '</th>' .
             /* TODO-3: Adicione as variaveis ao cabeçalho da tabela */
-            '        <th>' . $classificacao . '</th>' .
-            '        <th>' . $paginas . '</th>' .
-            '        <th>' . $edicao . '</th>' .
             '    </tr>';
 
         echo $cabecalho;
@@ -64,12 +56,8 @@
             while ($registro = mysqli_fetch_assoc($resultado)) {
                 echo '<tr>';
 
-                echo '<td>' . $registro[$titulo] . '</td>' .
-                    '<td>' . $registro[$autor] . '</td>' .
-                    /* TODO-4: Adicione a tabela os novos registros. */
-                    '<td>' . $registro[$classificacao] . '</td>';
-                    '<td>' . $registro[$paginas] . '</td>';
-                    '<td>' . $registro[$edicao] . '</td>';
+                echo '<td>' . $registro[$id_leitor1] . '</td>' .
+                    '<td>' . $registro[$id_leitor2] . '</td>';
                 echo '</tr>';
             }
             echo '</table>';
