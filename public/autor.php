@@ -13,27 +13,28 @@
 
 <body>
     <div class="content">
-        <h1>Amizade</h1>
+        <h1>Autores</h1>
 
-        <h2>amizade</h2>
+        <h2>autor</h2>
         <?php
         require 'mysql_server.php';
 
         $conexao = RetornaConexao();
 
-        $id_leitor1 = 'id_leitor1';
-        $id_leitor2 = 'id_leitor2';
-
+        $id_autor = 'id_autor';
+        $nome_autor = 'nome_autor';
+        $nacionalidade = 'nacionalidade';
+        $livro = 'livro';
         /*TODO-1: Adicione uma variavel para cada coluna */
 
 
         $sql =
-        'select leitor.nome_leitor leitor1, l2.nome_leitor leitor2' . 
+            'SELECT ' . $id_autor .
+            '     , ' . $nome_autor .
+            '     , ' . $nacionalidade .
+            '     , ' . $livro .
             /*TODO-2: Adicione cada variavel a consulta abaixo */
-            '  FROM amizade ' . 
-            'inner join leitor on leitor.id_leitor = amizade.id_leitor1
-            inner join leitor l2 on l2.id_leitor = amizade.id_leitor2';
-
+            '  FROM autor';
 
 
         $resultado = mysqli_query($conexao, $sql);
@@ -46,9 +47,11 @@
         $cabecalho =
             '<table>' .
             '    <tr>' .
-            '        <th>' . 'Leitor 1' . '</th>' .
-            '        <th>' . 'Leitor 2' . '</th>' .
+            '        <th>' . $id_autor . '</th>' .
+            '        <th>' . $nome_autor . '</th>' .
+            '        <th>' . $nacionalidade . '</th>' .
             /* TODO-3: Adicione as variaveis ao cabeçalho da tabela */
+            '        <th>' . $livro . '</th>' .
             '    </tr>';
 
         echo $cabecalho;
@@ -58,8 +61,11 @@
             while ($registro = mysqli_fetch_assoc($resultado)) {
                 echo '<tr>';
 
-                echo '<td>' . $registro['leitor1'] . '</td>' .
-                    '<td>' . $registro['leitor2'] . '</td>';
+                echo '<td>' . $registro[$id_autor] . '</td>' .
+                    '<td>' . $registro[$nome_autor] . '</td>' .
+                    '<td>' . $registro[$nacionalidade] . '</td>' .
+                    /* TODO-4: Adicione a tabela os novos registros. */
+                    '<td>' . $registro[$livro] . '</td>';
                 echo '</tr>';
             }
             echo '</table>';
