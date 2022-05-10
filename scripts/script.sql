@@ -71,3 +71,32 @@ insert into amizade values ('4','3');
 insert into amizade values ('5','2');
 insert into amizade values ('1','2');
 insert into amizade values ('4','5');
+
+create table possui(
+                    id_leitor int
+                    , titulo_livro varchar(100)
+                    , foreign key (id_leitor) references leitor (id_leitor)
+                    , foreign key (titulo_livro) references livros (titulo)
+                    on delete cascade
+                    on update cascade
+                    );
+                    
+select * from possui;
+select * from livros;
+
+insert into possui values ('1','Jogos Vorazes')
+						, ('2','Harry Potter')
+                        , ('3','O Senhor dos Anéis')
+                        , ('4','Diário de Um Banana')
+                        , ('5','Jogos Vorazes: Em Chamas')
+                        , ('3','Harry Potter')
+                        , ('4','Jogos Vorazes')
+                        , ('5','Diário de Um Banana')
+                        , ('2','Diário de Um Banana')
+                        ;
+                        
+select leitor.nome_leitor leitor
+, titulo_livro
+from possui
+inner join leitor on leitor.id_leitor = possui.id_leitor
+inner join livros on titulo = possui.titulo_livro;
