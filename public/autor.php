@@ -24,7 +24,7 @@
         $autor_id = 'autor_id';
         $nome_autor = 'nome_autor';
         $nacionalidade = 'nacionalidade';
-        $livro = 'livro';
+        $titulo_livros_id = 'titulo_livros_id';
         /*TODO-1: Adicione uma variavel para cada coluna */
 
 
@@ -32,7 +32,7 @@
             'SELECT ' . $autor_id .
             '     , ' . $nome_autor .
             '     , ' . $nacionalidade .
-            '     , ' . $livro .
+            '     , ' . $titulo_livros_id .
             /*TODO-2: Adicione cada variavel a consulta abaixo */
             '  FROM autor';
 
@@ -66,7 +66,7 @@
                     '<td>' . $registro[$nome_autor] . '</td>' .
                     '<td>' . $registro[$nacionalidade] . '</td>' .
                     /* TODO-4: Adicione a tabela os novos registros. */
-                    '<td>' . $registro[$livro] . '</td>';
+                    '<td>' . $registro[$titulo_livros_id] . '</td>';
                 echo '</tr>';
             }
             echo '</table>';
