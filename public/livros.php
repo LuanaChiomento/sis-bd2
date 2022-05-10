@@ -15,7 +15,7 @@
     <div class="content">
         <h1>Bibliófilo's</h1>
 
-        <h2>Livros</h2>
+        <h2>Livros:</h2>
         <?php
         require 'mysql_server.php';
 
@@ -49,12 +49,12 @@
         $cabecalho =
             '<table>' .
             '    <tr>' .
-            '        <th>' . $titulo_livros_id . '</th>' .
-            '        <th>' . $autor . '</th>' .
+            '        <th>' . 'Título' . '</th>' .
+            '        <th>' . 'Autor' . '</th>' .
             /* TODO-3: Adicione as variaveis ao cabeçalho da tabela */
-            '        <th>' . $classificacao . '</th>' .
-            '        <th>' . $paginas . '</th>' .
-            '        <th>' . $edicao . '</th>' .
+            '        <th>' . 'Classificação' . '</th>' .
+            '        <th>' . 'Páginas' . '</th>' .
+            '        <th>' . 'Edição' . '</th>' .
             '    </tr>';
 
         echo $cabecalho;

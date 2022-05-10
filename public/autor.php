@@ -15,7 +15,7 @@
     <div class="content">
         <h1>Autores</h1>
 
-        <h2>autor</h2>
+        <h2>Autores, suas nacionalidades e livros:</h2>
         <?php
         require 'mysql_server.php';
 
@@ -47,11 +47,12 @@
         $cabecalho =
             '<table>' .
             '    <tr>' .
-            '        <th>' . $autor_id . '</th>' .
-            '        <th>' . $nome_autor . '</th>' .
-            '        <th>' . $nacionalidade . '</th>' .
+            // '        <th>' . $autor_id . '</th>' .
+            '        <th>' . 'Nome' . '</th>' .
+            '        <th>' . 'Nacionalidade' . '</th>' .
             /* TODO-3: Adicione as variaveis ao cabeçalho da tabela */
-            '        <th>' . $livro . '</th>' .
+            '        <th>' . 'Livro' . '</th>' .
+
             '    </tr>';
 
         echo $cabecalho;
@@ -61,7 +62,7 @@
             while ($registro = mysqli_fetch_assoc($resultado)) {
                 echo '<tr>';
 
-                echo '<td>' . $registro[$autor_id] . '</td>' .
+                echo // '<td>' . $registro[$autor_id] . '</td>' .
                     '<td>' . $registro[$nome_autor] . '</td>' .
                     '<td>' . $registro[$nacionalidade] . '</td>' .
                     /* TODO-4: Adicione a tabela os novos registros. */

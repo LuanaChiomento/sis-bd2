@@ -15,7 +15,7 @@
     <div class="content">
         <h1>Amizade</h1>
 
-        <h2>amizade</h2>
+        <h2>Amizades entre leitores:</h2>
         <?php
         require 'mysql_server.php';
 

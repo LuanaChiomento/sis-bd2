@@ -112,13 +112,14 @@ alter table amizade rename column id_leitor2 to leitor_id2;
 
 alter table leitura rename column id_leitor to leitor_id;
 alter table leitura rename column titulo to titulo_livros_id;
+alter table biblioteca rename column titulo to titulo_livros_id;
+alter table biblioteca rename column id_leitor to leitor_id;
 
-
+alter table possui rename column titulo_livro to titulo_livros_id;
+alter table possui rename column id_leitor to leitor_id;
 
 # leitura, amizade e possui tem fk
-# mudar selects
-# alterar de acordo com padrões
-# tirar ids do front
+
 # ver cardinalidades
 # UML no draw.io
 # realizar dump

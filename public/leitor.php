@@ -15,7 +15,7 @@
     <div class="content">
         <h1>Leitores</h1>
 
-        <h2>leitor</h2>
+        <h2>Nome, cidade e número dos leitores cadastrados:</h2>
         <?php
         require 'mysql_server.php';
 
@@ -47,11 +47,11 @@
         $cabecalho =
             '<table>' .
             '    <tr>' .
-            '        <th>' . $nome_leitor . '</th>' .
-            '        <th>' . $leitor_id . '</th>' .
-            '        <th>' . $cidade . '</th>' .
+            '        <th>' . 'Nome' . '</th>' .
+          //  '        <th>' . $leitor_id . '</th>' .
+            '        <th>' . 'Cidade' . '</th>' .
             /* TODO-3: Adicione as variaveis ao cabeçalho da tabela */
-            '        <th>' . $numero . '</th>' .
+            '        <th>' . 'Número' . '</th>' .
             '    </tr>';
 
         echo $cabecalho;
@@ -62,7 +62,7 @@
                 echo '<tr>';
 
                 echo '<td>' . $registro[$nome_leitor] . '</td>' .
-                    '<td>' . $registro[$leitor_id] . '</td>' .
+                  //  '<td>' . $registro[$leitor_id] . '</td>' .
                     '<td>' . $registro[$cidade] . '</td>' .
                     /* TODO-4: Adicione a tabela os novos registros. */
                     '<td>' . $registro[$numero] . '</td>';

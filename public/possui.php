@@ -15,20 +15,19 @@
     <div class="content">
         <h1>Possui</h1>
 
-        <h2>possui</h2>
+        <h2>Livros que os leitores possuem:</h2>
         <?php
         require 'mysql_server.php';
 
         $conexao = RetornaConexao();
 
-        $id_leitor = 'id_leitor';
-        $titulo_livro = 'titulo_livro';
+        $leitor_id = 'leitor_id';
+        $titulo_livros_id = 'titulo_livros_id';
 
         $sql =
-        'select leitor.nome_leitor leitor, titulo_livro' . 
+        'select leitor.nome_leitor leitor, titulo_livros_id' . 
             '  FROM possui ' . 
-            'inner join leitor on leitor.id_leitor = possui.id_leitor
-            inner join livros on titulo = possui.titulo_livro';
+            'inner join leitor on leitor.leitor_id = possui.leitor_id';
 
 
 
@@ -43,7 +42,7 @@
             '<table>' .
             '    <tr>' .
             '        <th>' . 'Leitor' . '</th>' .
-            '        <th>' . 'Titulo livro' . '</th>' .
+            '        <th>' . 'Título livro' . '</th>' .
             '    </tr>';
 
         echo $cabecalho;
@@ -54,7 +53,7 @@
                 echo '<tr>';
 
                 echo '<td>' . $registro['leitor'] . '</td>' .
-                    '<td>' . $registro['titulo_livro'] . '</td>';
+                    '<td>' . $registro['titulo_livros_id'] . '</td>';
                 echo '</tr>';
             }
             echo '</table>';

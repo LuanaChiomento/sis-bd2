@@ -15,7 +15,7 @@
     <div class="content">
         <h1>Leitura</h1>
 
-        <h2>leitura</h2>
+        <h2>Leituras efetuadas:</h2>
         <?php
         require 'mysql_server.php';
 
@@ -29,12 +29,9 @@
 
 
         $sql =
-            'SELECT ' . $leitura_id .
-            '     , ' . $leitor_id .
-            '     , ' . $titulo_livros_id .
-            /*TODO-2: Adicione cada variavel a consulta abaixo */
-            '  FROM leitura';
-    
+        'select leitor.nome_leitor leitor, titulo_livros_id' . 
+            '  FROM leitura ' . 
+            'inner join leitor on leitor.leitor_id = leitura.leitor_id';
 
         $resultado = mysqli_query($conexao, $sql);
         if (!$resultado) {
@@ -46,9 +43,9 @@
         $cabecalho =
             '<table>' .
             '    <tr>' .
-            '        <th>' . $leitura_id . '</th>' .
-            '        <th>' . $leitor_id . '</th>' .
-            '        <th>' . $titulo_livros_id . '</th>' .
+           // '        <th>' . $leitura_id . '</th>' .
+            '        <th>' . 'Nome leitor' . '</th>' .
+            '        <th>' . 'Título livro' . '</th>' .
             /* TODO-3: Adicione as variaveis ao cabeçalho da tabela */
             '    </tr>';
 
@@ -59,8 +56,8 @@
             while ($registro = mysqli_fetch_assoc($resultado)) {
                 echo '<tr>';
 
-                echo '<td>' . $registro[$leitura_id] . '</td>' .
-                    '<td>' . $registro[$leitor_id] . '</td>'.
+                echo // '<td>' . $registro[$leitura_id] . '</td>' .
+                    '<td>' . $registro['leitor'] . '</td>'.
                     '<td>' . $registro[$titulo_livros_id] . '</td>';
                 echo '</tr>';
             }
