@@ -21,8 +21,8 @@
 
         $conexao = RetornaConexao();
 
-        $id_leitor1 = 'id_leitor1';
-        $id_leitor2 = 'id_leitor2';
+        $leitor_id1 = 'leitor_id1';
+        $leitor_id2 = 'leitor_id2';
 
         /*TODO-1: Adicione uma variavel para cada coluna */
 
@@ -31,8 +31,8 @@
         'select leitor.nome_leitor leitor1, l2.nome_leitor leitor2' . 
             /*TODO-2: Adicione cada variavel a consulta abaixo */
             '  FROM amizade ' . 
-            'inner join leitor on leitor.id_leitor = amizade.id_leitor1
-            inner join leitor l2 on l2.id_leitor = amizade.id_leitor2';
+            'inner join leitor on leitor.leitor_id = amizade.leitor_id1
+            inner join leitor l2 on l2.leitor_id = amizade.leitor_id2';
 
 
 

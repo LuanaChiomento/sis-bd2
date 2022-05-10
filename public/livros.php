@@ -21,7 +21,7 @@
 
         $conexao = RetornaConexao();
 
-        $titulo = 'titulo';
+        $titulo_livros_id = 'titulo_livros_id';
         $autor = 'autor';
         $classificacao = 'classificacao';
         $paginas = 'paginas';
@@ -30,7 +30,7 @@
 
 
         $sql =
-            'SELECT ' . $titulo .
+            'SELECT ' . $titulo_livros_id .
             '     , ' . $autor .
             '     , ' . $classificacao .
             '     , ' . $paginas .
@@ -49,7 +49,7 @@
         $cabecalho =
             '<table>' .
             '    <tr>' .
-            '        <th>' . $titulo . '</th>' .
+            '        <th>' . $titulo_livros_id . '</th>' .
             '        <th>' . $autor . '</th>' .
             /* TODO-3: Adicione as variaveis ao cabeçalho da tabela */
             '        <th>' . $classificacao . '</th>' .
@@ -64,7 +64,7 @@
             while ($registro = mysqli_fetch_assoc($resultado)) {
                 echo '<tr>';
 
-                echo '<td>' . $registro[$titulo] . '</td>' .
+                echo '<td>' . $registro[$titulo_livros_id] . '</td>' .
                     '<td>' . $registro[$autor] . '</td>' .
                     /* TODO-4: Adicione a tabela os novos registros. */
                     '<td>' . $registro[$classificacao] . '</td>'.

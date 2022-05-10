@@ -22,7 +22,7 @@
         $conexao = RetornaConexao();
 
         $nome_leitor = 'Nome_leitor';
-        $id_leitor = 'id_leitor';
+        $leitor_id = 'leitor_id';
         $cidade = 'Cidade';
         $numero = 'Numero';
         /*TODO-1: Adicione uma variavel para cada coluna */
@@ -30,7 +30,7 @@
 
         $sql =
             'SELECT ' . $nome_leitor .
-            '     , ' . $id_leitor .
+            '     , ' . $leitor_id .
             '     , ' . $cidade .
             '     , ' . $numero .
             /*TODO-2: Adicione cada variavel a consulta abaixo */
@@ -48,7 +48,7 @@
             '<table>' .
             '    <tr>' .
             '        <th>' . $nome_leitor . '</th>' .
-            '        <th>' . $id_leitor . '</th>' .
+            '        <th>' . $leitor_id . '</th>' .
             '        <th>' . $cidade . '</th>' .
             /* TODO-3: Adicione as variaveis ao cabeçalho da tabela */
             '        <th>' . $numero . '</th>' .
@@ -62,7 +62,7 @@
                 echo '<tr>';
 
                 echo '<td>' . $registro[$nome_leitor] . '</td>' .
-                    '<td>' . $registro[$id_leitor] . '</td>' .
+                    '<td>' . $registro[$leitor_id] . '</td>' .
                     '<td>' . $registro[$cidade] . '</td>' .
                     /* TODO-4: Adicione a tabela os novos registros. */
                     '<td>' . $registro[$numero] . '</td>';

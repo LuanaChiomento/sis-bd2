@@ -100,3 +100,27 @@ select leitor.nome_leitor leitor
 from possui
 inner join leitor on leitor.id_leitor = possui.id_leitor
 inner join livros on titulo = possui.titulo_livro;
+
+alter table leitor rename column id_leitor to leitor_id;
+alter table autor rename column id_autor to autor_id;
+alter table biblioteca rename column id_biblioteca to biblioteca_id;
+alter table leitura rename column lleitura_id to leitura_id;
+alter table livros rename column titulo to titulo_livros_id;
+
+alter table amizade rename column id_leitor1 to leitor_id1;
+alter table amizade rename column id_leitor2 to leitor_id2;
+
+alter table leitura rename column id_leitor to leitor_id;
+alter table leitura rename column titulo to titulo_livros_id;
+
+
+
+# leitura, amizade e possui tem fk
+# mudar selects
+# alterar de acordo com padrões
+# tirar ids do front
+# ver cardinalidades
+# UML no draw.io
+# realizar dump
+# git commit e push
+# postar tarefa e link do git no moodle

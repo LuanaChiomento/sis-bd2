@@ -21,14 +21,14 @@
 
         $conexao = RetornaConexao();
 
-        $id_biblioteca = 'id_biblioteca';
+        $biblioteca_id = 'biblioteca_id';
         $id_leitor = 'id_leitor';
         $titulo = 'titulo';
         /*TODO-1: Adicione uma variavel para cada coluna */
 
 
         $sql =
-            'SELECT ' . $id_biblioteca .
+            'SELECT ' . $biblioteca_id .
             '     , ' . $id_leitor .
             '     , ' . $titulo .
             /*TODO-2: Adicione cada variavel a consulta abaixo */
@@ -45,7 +45,7 @@
         $cabecalho =
             '<table>' .
             '    <tr>' .
-            '        <th>' . $id_biblioteca . '</th>' .
+            '        <th>' . $biblioteca_id . '</th>' .
             '        <th>' . $id_leitor . '</th>' .
             /* TODO-3: Adicione as variaveis ao cabeçalho da tabela */
             '        <th>' . $titulo . '</th>' .
@@ -58,7 +58,7 @@
             while ($registro = mysqli_fetch_assoc($resultado)) {
                 echo '<tr>';
 
-                echo '<td>' . $registro[$id_biblioteca] . '</td>' .
+                echo '<td>' . $registro[$biblioteca_id] . '</td>' .
                     '<td>' . $registro[$id_leitor] . '</td>' .
                     /* TODO-4: Adicione a tabela os novos registros. */
                     '<td>' . $registro[$titulo] . '</td>';

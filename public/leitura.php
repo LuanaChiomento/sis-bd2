@@ -21,20 +21,20 @@
 
         $conexao = RetornaConexao();
 
-        $id_leitura = 'id_leitura';
-        $id_leitor = 'id_leitor';
-        $titulo = 'titulo';
+        $leitura_id = 'leitura_id';
+        $leitor_id = 'leitor_id';
+        $titulo_livros_id = 'titulo_livros_id';
 
         /*TODO-1: Adicione uma variavel para cada coluna */
 
 
         $sql =
-            'SELECT ' . $id_leitura .
-            '     , ' . $id_leitor .
-            '     , ' . $titulo .
+            'SELECT ' . $leitura_id .
+            '     , ' . $leitor_id .
+            '     , ' . $titulo_livros_id .
             /*TODO-2: Adicione cada variavel a consulta abaixo */
             '  FROM leitura';
-
+    
 
         $resultado = mysqli_query($conexao, $sql);
         if (!$resultado) {
@@ -46,9 +46,9 @@
         $cabecalho =
             '<table>' .
             '    <tr>' .
-            '        <th>' . $id_leitura . '</th>' .
-            '        <th>' . $id_leitor . '</th>' .
-            '        <th>' . $titulo . '</th>' .
+            '        <th>' . $leitura_id . '</th>' .
+            '        <th>' . $leitor_id . '</th>' .
+            '        <th>' . $titulo_livros_id . '</th>' .
             /* TODO-3: Adicione as variaveis ao cabeçalho da tabela */
             '    </tr>';
 
@@ -59,9 +59,9 @@
             while ($registro = mysqli_fetch_assoc($resultado)) {
                 echo '<tr>';
 
-                echo '<td>' . $registro[$id_leitura] . '</td>' .
-                    '<td>' . $registro[$id_leitor] . '</td>'.
-                    '<td>' . $registro[$titulo] . '</td>';
+                echo '<td>' . $registro[$leitura_id] . '</td>' .
+                    '<td>' . $registro[$leitor_id] . '</td>'.
+                    '<td>' . $registro[$titulo_livros_id] . '</td>';
                 echo '</tr>';
             }
             echo '</table>';
