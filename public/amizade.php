@@ -28,7 +28,7 @@
 
 
         $sql =
-        'select leitor.nome_leitor leitor1, l2.nome_leitor leitor2' . 
+        'select distinct leitor.nome_leitor leitor1, l2.nome_leitor leitor2' . 
             /*TODO-2: Adicione cada variavel a consulta abaixo */
             '  FROM amizade ' . 
             'inner join leitor on leitor.leitor_id = amizade.leitor_id1

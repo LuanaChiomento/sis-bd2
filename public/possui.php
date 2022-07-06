@@ -25,7 +25,7 @@
         $titulo_livros_id = 'titulo_livros_id';
 
         $sql =
-        'select leitor.nome_leitor leitor, titulo_livros_id' . 
+        'select distinct leitor.nome_leitor leitor, titulo_livros_id' . 
             '  FROM possui ' . 
             'inner join leitor on leitor.leitor_id = possui.leitor_id';
 
