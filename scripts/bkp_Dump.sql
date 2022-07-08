@@ -57,7 +57,7 @@ CREATE TABLE `autor` (
   PRIMARY KEY (`autor_id`),
   KEY `livro` (`titulo_livros_id`),
   CONSTRAINT `autor_ibfk_1` FOREIGN KEY (`titulo_livros_id`) REFERENCES `livros` (`titulo_livros_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,7 +66,7 @@ CREATE TABLE `autor` (
 
 LOCK TABLES `autor` WRITE;
 /*!40000 ALTER TABLE `autor` DISABLE KEYS */;
-INSERT INTO `autor` VALUES (1,'J. K. Rowling','britânica','Harry Potter'),(2,'J. K. Rowling','britânica','Harry Potter'),(3,'Jeff Kinney','estadunidense','Diário de Um Banana'),(4,'J. R. R. Tolkien','britânico','O Senhor dos Anéis'),(5,'Suzanne Collins','estadunidense','Jogos Vorazes');
+INSERT INTO `autor` VALUES (1,'J. K. Rowling','britânica','Harry Potter'),(2,'J. K. Rowling','britânica','Harry Potter'),(3,'Jeff Kinney','estadunidense','Diário de Um Banana'),(4,'J. R. R. Tolkien','britânico','O Senhor dos Anéis'),(5,'Suzanne Collins','estadunidense','Jogos Vorazes'),(6,'Liev Tolstói',NULL,NULL),(7,'Gabriel García Márquez',NULL,NULL),(8,'Jane Austen',NULL,NULL),(9,'Homero',NULL,NULL),(10,'Lewis Carroll',NULL,NULL),(11,'Emily Brontë',NULL,NULL),(12,'Machado de Assis',NULL,NULL);
 /*!40000 ALTER TABLE `autor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -112,7 +112,7 @@ CREATE TABLE `leitor` (
   `cidade` varchar(100) DEFAULT NULL,
   `numero` int DEFAULT NULL,
   PRIMARY KEY (`leitor_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -121,7 +121,7 @@ CREATE TABLE `leitor` (
 
 LOCK TABLES `leitor` WRITE;
 /*!40000 ALTER TABLE `leitor` DISABLE KEYS */;
-INSERT INTO `leitor` VALUES ('Maria',1,'Farroupilha',999990000),('João',2,'Caxias do Sul',999874532),('Lúcia',3,'Flores da Cunha',999765435),('Paula',4,'Garibaldi',996786512),('Giovana',5,'Bento Gonçalves',997808646);
+INSERT INTO `leitor` VALUES ('Maria',1,'Farroupilha',999990000),('João',2,'Caxias do Sul',999874532),('Lúcia',3,'Flores da Cunha',999765435),('Paula',4,'Garibaldi',996786512),('Giovana',5,'Bento Gonçalves',997808646),('Antonella',6,NULL,NULL),('José',8,NULL,NULL),('Rivcardo',9,NULL,NULL),('Pedro',10,NULL,NULL);
 /*!40000 ALTER TABLE `leitor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -177,7 +177,7 @@ CREATE TABLE `livros` (
 
 LOCK TABLES `livros` WRITE;
 /*!40000 ALTER TABLE `livros` DISABLE KEYS */;
-INSERT INTO `livros` VALUES ('Diário de Um Banana','Comédia','Jeff Kinney',360,3),('Harry Potter','Ficção','J. K. Rowling',300,1),('Jogos Vorazes','Aventura','Suzanne Collins',400,1),('Jogos Vorazes: Em Chamas','Aventura','Suzanne Collins',423,1),('O Senhor dos Anéis','Fantasia','J. R. R. Tolkien',800,4);
+INSERT INTO `livros` VALUES ('Alice no País das Maravilhas',NULL,'Lewis Carroll',NULL,NULL),('Cem Anos de Solidão',NULL,'Gabriel García Márquez',NULL,NULL),('Diário de Um Banana','Comédia','Jeff Kinney',360,3),('Guerra e Paz',NULL,'Liev Tolstói',NULL,NULL),('Harry Potter','Ficção','J. K. Rowling',300,1),('Jogos Vorazes','Aventura','Suzanne Collins',400,1),('Jogos Vorazes: Em Chamas','Aventura','Suzanne Collins',423,1),('O Morro dos Ventos Uivantes',NULL,'Emily Brontë',NULL,NULL),('O Senhor dos Anéis','Fantasia','J. R. R. Tolkien',800,4),('Odisseia',NULL,'Homero',NULL,NULL),('Orgulho e Preconceito',NULL,'Jane Austen',NULL,NULL),('Turma da Mônica',NULL,'Maurício de Souza',NULL,NULL);
 /*!40000 ALTER TABLE `livros` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -204,9 +204,56 @@ CREATE TABLE `possui` (
 
 LOCK TABLES `possui` WRITE;
 /*!40000 ALTER TABLE `possui` DISABLE KEYS */;
-INSERT INTO `possui` VALUES (1,'Jogos Vorazes'),(2,'Harry Potter'),(3,'O Senhor dos Anéis'),(4,'Diário de Um Banana'),(5,'Jogos Vorazes: Em Chamas'),(3,'Harry Potter'),(4,'Jogos Vorazes'),(5,'Diário de Um Banana'),(2,'Diário de Um Banana');
+INSERT INTO `possui` VALUES (1,'Jogos Vorazes'),(2,'Harry Potter'),(3,'O Senhor dos Anéis'),(4,'Diário de Um Banana'),(5,'Jogos Vorazes: Em Chamas'),(3,'Harry Potter'),(4,'Jogos Vorazes'),(5,'Diário de Um Banana'),(2,'Diário de Um Banana'),(5,'Harry Potter'),(5,'Harry Potter'),(5,'Harry Potter'),(4,'Harry Potter'),(4,'Harry Potter'),(4,'Harry Potter');
 /*!40000 ALTER TABLE `possui` ENABLE KEYS */;
 UNLOCK TABLES;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `REGISTRO_EXCLUIDO` AFTER DELETE ON `possui` FOR EACH ROW DELETE FROM possui
+       WHERE possui.leitor_id = old.leitor_id */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+
+--
+-- Temporary view structure for view `vw_livro_autor`
+--
+
+DROP TABLE IF EXISTS `vw_livro_autor`;
+/*!50001 DROP VIEW IF EXISTS `vw_livro_autor`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `vw_livro_autor` AS SELECT 
+ 1 AS `titulo_livros_id`,
+ 1 AS `autor`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Final view structure for view `vw_livro_autor`
+--
+
+/*!50001 DROP VIEW IF EXISTS `vw_livro_autor`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `vw_livro_autor` AS select `li`.`titulo_livros_id` AS `titulo_livros_id`,`li`.`autor` AS `autor` from `livros` `li` where (`li`.`autor` is not null) group by `li`.`autor` order by `li`.`autor` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -217,4 +264,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-10 16:32:26
+-- Dump completed on 2022-07-08 20:44:39
